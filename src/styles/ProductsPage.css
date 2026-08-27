@@ -1,166 +1,7 @@
-body {
-    color: purple;
-}
-
-
+/* Generali Pagina */
 .products-page {
     padding-top: 40px;
     padding-bottom: 5rem;
-}
-
-.product-wrapper {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    transition: transform 0.2s ease;
-}
-
-.product-wrapper:hover {
-    transform: translateY(-4px);
-}
-
-.product-wrapper .col {
-    padding: 0 !important;
-}
-
-.product-wrapper button {
-    margin-top: 5px;
-}
-
-.product-wrapper .card {
-    height: 100%;
-}
-
-.add-btn {
-    background: #301f6a;
-    color: white;
-    padding: 12px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-    transition: 0.3s ease;
-}
-
-.add-btn:hover {
-    background-color: #5a23b8;
-    color: white;
-}
-
-.products-filters {
-    gap: 1.5rem;
-}
-
-.products-filters select {
-    min-width: 180px;
-    max-width: 260px;
-}
-
-.products-filters .form-label {
-    font-size: 0.9rem;
-    margin-bottom: 0.3rem;
-}
-
-.products-filters button {
-    height: 38px;
-}
-
-
-
-/* --- Custom Checkbox --- */
-.category-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 5px 12px;
-    border-radius: 12px;
-    background-color: #eebc93;
-    border: 1px solid var(--orange-darker);
-    cursor: pointer;
-    transition: all 0.15s ease;
-    font-size: 16px;
-    font-weight: 550;
-    line-height: 1;
-    white-space: nowrap;
-}
-
-.compact-input {
-    background-color: #eebc93;
-    border: 1px solid var(--orange-darker) !important;
-}
-
-.category-chip:hover {
-    background: var(--orange);
-    border-color: var(--orange-darker);
-}
-
-.category-chip.active {
-    background: var(--orange) !important;
-    border-color: var(--orange-darker);
-    color: white;
-}
-
-.category-chip .checkmark {
-    font-size: 11px;
-    font-weight: bold;
-    margin-left: 2px;
-}
-
-.category-columns {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 5px;
-}
-
-.category-column {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    column-gap: 5px;
-}
-
-
-
-.filters-row {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 10px;
-    flex-wrap: nowrap;
-    padding: 0;
-    margin-top: 35px;
-    margin-bottom: 35px;
-}
-
-.filters-row select,
-.filters-row input {
-    min-width: 140px !important;
-}
-
-.search-btn {
-    background: var(--purple);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    padding: 4px 14px;
-    font-weight: 600;
-    transition: 0.2s ease;
-}
-
-.search-btn:hover {
-    background: purple;
-    color: white;
-}
-
-.filters-row .form-label {
-    margin-bottom: 4px;
-    font-size: 0.9rem;
-}
-
-.category-chip.active {
-    background: #4b3bb8;
-    border-color: var(--orange-darker) !important;
 }
 
 .line {
@@ -176,10 +17,107 @@ body {
     border-radius: 999px;
 }
 
-.filters-row-mobile {
-    display: none;
+/* Pulsante Generico Add */
+.add-btn {
+    background: #301f6a;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    transition: background-color 0.3s ease;
 }
 
+.add-btn:hover {
+    background-color: #5a23b8;
+    color: white;
+}
+
+/* Custom Category Chips */
+.category-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 12px;
+    border-radius: 12px;
+    background-color: #eebc93;
+    border: 1px solid var(--orange-darker, #d96b14);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-size: 16px;
+    font-weight: 550;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.category-chip:hover {
+    background: var(--orange, #fd7e14);
+    border-color: var(--orange-darker, #d96b14);
+}
+
+.category-chip.active {
+    background: #4b3bb8 !important;
+    border-color: var(--orange-darker, #d96b14) !important;
+    color: white;
+}
+
+.category-chip .checkmark {
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+.compact-input {
+    background-color: #eebc93;
+    border: 1px solid var(--orange-darker, #d96b14) !important;
+}
+
+.category-columns {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5px;
+}
+
+.category-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Sezione Filtri Desktop */
+.filters-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: nowrap;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.search-btn {
+    background: var(--purple, #210d5b);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 4px 14px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.search-btn:hover {
+    background: purple;
+    color: white;
+}
+
+.filters-row .form-label {
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+}
+
+/* Custom Switch IOS Style */
 .ios-switch-container {
     display: flex;
     align-items: center;
@@ -204,7 +142,7 @@ body {
 .ios-switch-track {
     width: 52px;
     height: 32px;
-    background: #e5e5ea;
+    background: #eebc93;
     border-radius: 16px;
     position: relative;
     transition: background 0.25s ease;
@@ -223,20 +161,13 @@ body {
     transition: transform 0.25s ease;
 }
 
-.ios-switch-track.min {
-    background: #eebc93;
-}
-
-.ios-switch-track.min::after {
-    transform: translateX(0);
-}
-
-.ios-switch-track.max {
-    background: #eebc93;
-}
-
 .ios-switch-track.max::after {
     transform: translateX(20px);
+}
+
+/* Responsive Filters */
+.filters-row-mobile {
+    display: none;
 }
 
 @media (max-width: 768px) {
@@ -253,7 +184,7 @@ body {
 
     .mobile-search input {
         height: 44px;
-        width: 100% !important;
+        width: 100%;
         border-radius: 10px;
         border: 1px solid #dcdcff;
         background: #f3f3ff;
@@ -268,7 +199,7 @@ body {
     }
 
     .mobile-row-2 select {
-        width: 50%;
+        width: 100%;
         height: 44px;
         border-radius: 10px;
         border: 1px solid #dcdcff;
@@ -277,13 +208,9 @@ body {
         font-weight: 600;
         text-align: center;
     }
-
-    .search-btn {
-        width: 50px;
-    }
 }
 
-@media screen and (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 991px) {
     .category-columns {
         flex-direction: column;
         gap: 8px;

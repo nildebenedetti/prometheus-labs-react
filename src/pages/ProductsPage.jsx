@@ -131,7 +131,7 @@ export default function ProductsPage() {
     };
 
     return (
-        <main className="container products-page">
+        <main className="container products-page  px-4 px-md-3">
             <h1 className="text-center mb-4">Products</h1>
             <hr className="line" />
 
@@ -284,29 +284,28 @@ export default function ProductsPage() {
 
 
             </section>
+            
+                {loadingProducts && <p>Products Loading...</p>}
 
-            {loadingProducts && <p>Products Loading...</p>}
+                {productsError && <p className="text-danger text-center my-5 fs-5">{search ? `No products found for search term "${search}"` : productsError}</p>}
 
-            {productsError && <p className="text-danger text-center my-5 fs-5">{search ? `No products found for search term "${search}"` : productsError}</p>}
+                {!loadingProducts && !productsError && visibleProducts.length === 0 && (
+                    <p>{search ? `No products found with name "${search}"` : "No products to be shown"}</p>
+                )}
 
-            {!loadingProducts && !productsError && visibleProducts.length === 0 && (
-                <p>{search ? `No products found with name "${search}"` : "No products to be shown"}</p>
-            )}
-
-            {!loadingProducts && !productsError && (
-                <section className="row g-4 mb-5">
-                    {visibleProducts.map((product) => (
-                        <div key={product.id} className="col-12 col-lg-4">
-                            <div className="product-wrapper">
-                                <ProductCard
-                                    product={product}
-                                    className={`${styles.productCard}`}
-                                />
+                {!loadingProducts && !productsError && (
+                    <div className="row g-4 mb-5">
+                        {visibleProducts.map((product) => (
+                            <div key={product.id} className="col-12 col-md-6 col-lg-4 col-xl-3">
+                                    <ProductCard
+                                        product={product}
+                                        className={`${styles.productCard}`}
+                                    />
                             </div>
-                        </div>
-                    ))}
-                </section>
-            )}
+                        ))}
+                    </div>
+                )}
+
         </main>
     );
 }
