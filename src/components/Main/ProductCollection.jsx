@@ -10,9 +10,7 @@ function ProductCollection() {
 
   // stato per i prodotti
   const [latest, setLatest] = useState([]);
-  const [latestLast, setLatestLast] = useState(null);
   const [bestsellers, setBestsellers] = useState([]);
-  const [bestsellersLast, setBestsellersLast] = useState(null);
 
   useEffect(() => {
     
@@ -23,11 +21,9 @@ function ProductCollection() {
           api.getBestsellerProducts()
         ]);
         
-        const slicedLatest = latestProducts.slice(0, 3);
-        const slicedLatestLast = latestProducts[3];
+        const slicedLatest = latestProducts.slice(0, 5);
 
         setLatest(slicedLatest);
-        setLatestLast(slicedLatestLast);
         // la total quanity è il numero totale di unità vendute
         // per il dato prodotto recuperata da orders
         const sortedBestsellers = [...bestsellerProducts].sort((a, b) => {
@@ -35,12 +31,9 @@ function ProductCollection() {
         });
 
 
-        const slicedBestsellers = sortedBestsellers.slice(0, 3);
-        const slicedBestsellersLast = sortedBestsellers[3];
-
+        const slicedBestsellers = sortedBestsellers.slice(0, 5);
 
         setBestsellers(slicedBestsellers);
-        setBestsellersLast(slicedBestsellersLast);
         
 
       } catch (error) {
@@ -56,9 +49,9 @@ function ProductCollection() {
 
   return <>
     <div className="">
-      <ProductGrid title="Clients'Favorites" products={bestsellers} lastProduct={bestsellersLast} />
+      <ProductGrid title="Clients'Favorites" products={bestsellers} />
       <Link to="/products?category=dailysuper"> <DailysupBanner /> </Link>
-      <ProductGrid title="New In" products={latest} lastProduct={latestLast} />
+      <ProductGrid title="New In" products={latest} />
       <Link to="/products?category=novamorph"> <NovaBanner /> </Link>
     </div>
   </>
