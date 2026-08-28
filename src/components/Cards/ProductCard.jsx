@@ -64,7 +64,7 @@ function ProductCard({ product, className = "" }) {
   }
 
   return (
-    <div className={`card h-100 d-flex flex-column ${styles.productCard}`}>
+    <div className={`card h-100 d-flex flex-column pt-4 ${styles.productCard}`}>
       {/* Image */}
       <Link to={`/products/${product.slug}`}>
         <img
@@ -76,7 +76,7 @@ function ProductCard({ product, className = "" }) {
       {/* card body */}
       <div className={`card-body d-flex flex-column ${styles.cardBody}`}>
         <div className="card-title-container text-center">
-          <h6 className={`mb-0 fst-italic fsw-small ${styles.cardTitle}`}>
+          <h6 className={`mb-1 ${styles.cardTitle}`}>
             {product.name}
           </h6>
           <div className="">

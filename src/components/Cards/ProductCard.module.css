@@ -1,13 +1,14 @@
 /* Card base pulita dai conflitti di griglia */
 .productCard {
-    padding-top: 0; /* Rimosso 2.5% che creava spaziature verticali anomale */
+    padding-top: 0;
     z-index: 1;
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 100%; /* Occupa l'intera colonna fornita da Bootstrap */
+    width: 100%;
     box-sizing: border-box;
     overflow: hidden;
+    border-radius: 9px;
 }
 
 .productCard img {
@@ -33,21 +34,21 @@
     width: 100%;
     flex: 1 1 auto;
     background: linear-gradient(to bottom,
-            rgba(156, 27, 199, 0.12) 0%,
-            rgba(156, 27, 199, 0.30) 60%,
-            rgba(76, 13, 97, 0.55) 100%);
+            var(--color-secondary-50) 0%,
+            #60179097 80%,
+            #601790af 100%);
     padding: 1rem 0.5rem;
 }
 
 .cardTitle {
-    color: #2c127a;
-    text-decoration: underline;
+    color: var(--color-secondary-700);
+    font-size: 18px;
 }
 
 .powerTitle {
     color: var(--orange-lighter);
-    font-size: 20px;
-    text-shadow: -2px -2px 1px var(--purple), 2px -2px 1px var(--purple), -2px 2px 1px var(--purple), 2px 2px 1px var(--purple);
+    font-size: 15px;
+    text-shadow: -1px -1px 1px var(--color-secondary-700), 1px -1px 1px var(--color-secondary-700), -1px 1px 1px var(--color-secondary-700), 1px 1px 1px var(--color-secondary-700);
 }
 
 .iconic {
